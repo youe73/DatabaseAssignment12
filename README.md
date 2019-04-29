@@ -14,15 +14,28 @@ I have used CMD (commandline) to run the following statements:
     CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                      NAMES
     38c09ffdcbf8        neo4j               "/sbin/tini -g -- /d…"   10 seconds ago      Up 9 seconds        0.0.0.0:7474->7474/tcp,    7473/tcp, 0.0.0.0:7687->7687/tcp   neo4j
     
-The container is created using Caspers startup Docker code and it is possible to enter the site http://localhost:7474/browser/ 
+The container is created using Casper's startup Docker code and it is possible to enter the site http://localhost:7474/browser/ 
 and use neo4j's graph database. The next statement is the problem
 
     docker run -it -v %cd%:/var/lib/neo4j/import bash
   
-It gives me the error message:
+To mount/volume your hosts files into sharing apparently needs login and password:
+
+![image](https://user-images.githubusercontent.com/40825848/56875308-5cddc600-6a40-11e9-8059-6c2858117213.png)
+
+Even the The login credintials are inputtet, it keeps giving me the error message:
 
     docker: Error response from daemon: Drive sharing failed for an unknown reason.
     See 'docker run --help'.
+
+If the mount can be done the following statement should be excecuted:
+
+        LOAD CSV WITH HEADERS FROM "file:///some2016UKgeotweets.csv" AS row 
+            FIELDTERMINATOR ";"
+        return row
+        LIMIT 1
+
+
 
 
 

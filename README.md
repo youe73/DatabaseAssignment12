@@ -35,6 +35,12 @@ If the mount can be done the following statement should be excecuted:
         return row
         LIMIT 1
 
+But as the files are not mounted inside Docker container it gives the error:
+
+        Neo.ClientError.Statement.ExternalResourceFailed: Couldn't load the external resource at: file:/var/lib/neo4j/import/some2016UKgeotweets.csv
+
+
+
 
 
 

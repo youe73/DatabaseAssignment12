@@ -40,8 +40,11 @@ But as the files are not mounted inside Docker container it gives the error:
         Neo.ClientError.Statement.ExternalResourceFailed: Couldn't load the external resource at: file:/var/lib/neo4j/import/some2016UKgeotweets.csv
 
 
+The same goes for below statement
+
+![image](https://user-images.githubusercontent.com/40825848/56877017-7b958a00-6a4b-11e9-9b29-fb854a6062ad.png)
 
 
-
+Unfortunately exercise 2 and 3 could not be solved
 
 
